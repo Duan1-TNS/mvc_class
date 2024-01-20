@@ -27,8 +27,8 @@ switch ($url) {
     case 'update-flight':
         if (isset($_POST['update'])) {
             $flightMain->uppFlight($_GET['id'], $_POST['flight_number'], $_FILES['image'], $_POST['total_passengers'], $_POST['description'], $_POST['airline_id']);
-            // var_dump($_GET['id'], $_POST['flight_number'], $_FILES['image'], $_POST['total_passengers'], $_POST['description'], $_POST['airline_id']);
-            // die;
+            var_dump($_GET['id'], $_POST['flight_number'], $_FILES['image'], $_POST['total_passengers'], $_POST['description'], $_POST['airline_id']);
+            die;
         }
         $flightMain->updateFlight($_GET['id']);
         break;

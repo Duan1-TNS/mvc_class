@@ -42,7 +42,7 @@ class fliController extends Flight
     {
         //Thêm ảnh
         // var_dump($image);
-        $targetDir = "public/image"; // đường dẫn lưu ảnh
+        $targetDir = "public/image/"; // đường dẫn lưu ảnh
         $targetFile = $targetDir . $image['name'];
         if (move_uploaded_file($image['tmp_name'], $targetFile)) {
             $imageUrl = $targetFile;
@@ -65,14 +65,13 @@ class fliController extends Flight
 
     public function updateFlights($id, $flight_number, $image, $total_passengers, $description, $airline_id)
     {
+
         $vieUppdate = $this->getFliInstance()->getOneFlight($id);
 
         if ($image['size'] != 0) {
-            // thư mục sẽ được lưu ảnh vào thư mục image
             $targetDir = "public/image/";
-            //Đường dẫn đến file được lưu
             $targetFile = $targetDir . $image['name'];
-            // Tiến hành upload file ảnh
+
             if (move_uploaded_file($image['tmp_name'], $targetFile)) {
                 $imageUrl = $targetFile;
             }
@@ -86,7 +85,6 @@ class fliController extends Flight
         if (!$check) {
             echo '<script>alert("Cap nhat sản phẩm thành công")</script>';
             echo '<script>window.location.href = "index.php?url=list-flight";</script>';
-        }  
-        
+        }
     }
 }

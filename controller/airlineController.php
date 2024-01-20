@@ -33,11 +33,12 @@ class airController extends Airline
 
         if(empty(trim($name))){
             $error['name']['required'] = 'Không bỏ trống tên sản phẩm';
-        }else{
-            if(strlen(trim($name))<5){
-                $error['name']['length'] = 'Tên sản phẩm phải có ít nhất 5 kí tự';
-            }
         }
+        // else{
+        //     if(strlen(trim($name))<5){
+        //         $error['name']['length'] = 'Tên sản phẩm phải có ít nhất 5 kí tự';
+        //     }
+        // }
 
         if(!empty($error)){
             $_SESSION['error_messages'] = $error;

@@ -13,7 +13,7 @@
         </div>
         <?php
             echo (!empty($error_messages['name']['required'])) ? '<span style="color=red;">'.$error_messages['name']['required'].'</span>':'';
-            echo (!empty($error_messages['name']['length'])) ? '<span style="color=red;">'.$error_messages['name']['length'].'</span>':'';
+            // echo (!empty($error_messages['name']['length'])) ? '<span style="color=red;">'.$error_messages['name']['length'].'</span>':'';
         ?>
         <input type="submit" class="btn btn-success" name="add" value="ADD">
     </form>
